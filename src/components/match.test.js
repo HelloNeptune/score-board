@@ -15,7 +15,6 @@ test('should render toolbar component correctly', () => {
 
 test('should update the score when update button clicked', () => {
   render(<Match match={{
-    id: 'f5cbf1ccb6f15',
     home: 'Arsenal',
     away: 'Chelsea',
     score: [1, 0],
@@ -35,7 +34,6 @@ test('should update the score when update button clicked', () => {
 
 test('should finish match when finish button clicked', () => {
    render(<Match match={{
-    id: '6e10445083ec8',
     home: 'Arsenal',
     away: 'Chelsea',
     score: [1, 0],

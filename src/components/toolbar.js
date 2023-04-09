@@ -1,7 +1,6 @@
 import { toolbarComponent } from "../shared"
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
-import { Checkbox } from 'primereact/checkbox';
 
 export const Toolbar = ({ setMatch }) => {
   return (

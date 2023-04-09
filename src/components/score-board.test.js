@@ -17,16 +17,14 @@ test('should render ScoreBoard component correctly', () => {
 test('should sort and render the given matches by their scores', () => {
   render(<ScoreBoard matches={[
     {
-      id: 'f5cbf1ccb6f15',
       home: 'Arsenal',
       away: 'Chelsea',
       score: [1, 0],
       finished: true
     },
     {
-      id: '359ca7cb7fbe1',
-      home: 'Arsenal',
-      away: 'Chelsea',
+      home: 'AC Milan',
+      away: 'Real Madrid',
       score: [3, 2],
       finished: true
     }
@@ -44,16 +42,14 @@ test('should sort and render the given matches by their scores', () => {
 test('should show error message if there is any onging matches', () => {
   render(<ScoreBoard matches={[
     {
-      id: 'f5cbf1ccb6f15',
       home: 'Arsenal',
       away: 'Chelsea',
       score: [1, 0],
       finished: true
     },
     {
-      id: '359ca7cb7fbe1',
-      home: 'Arsenal',
-      away: 'Chelsea',
+      home: 'AC Milan',
+      away: 'Real Madrid',
       score: [3, 2],
       finished: false
     }
