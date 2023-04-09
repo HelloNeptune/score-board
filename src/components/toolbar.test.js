@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import {
     toolbarComponent,
     homeTeamInput,
@@ -17,6 +18,27 @@ test('should render toolbar component correctly', () => {
     expect(screen.getByTestId(createButton)).toBeInTheDocument();
 });
 
-test('should create new match when click the create button', async () => {
-    render(<Toolbar />);
+test('should create new match when click the create button', () => {
+    const matchSetter = jest.fn();
+    render(<Toolbar setMatch={matchSetter} />);
+
+    const createButtonElement = screen.getByTestId(createButton);
+    userEvent.click(createButtonElement);
+
+    expect(matchSetter).toHaveBeenCalledWith({
+        home: 'Arsenal',
+        away: 'Chelsea',
+        score: [0, 0],
+        finished: false
+    })
+});
+
+test('should not create new match if all competitions are finished', () => {
+    const matchSetter = jest.fn();
+    render(<Toolbar setMatch={matchSetter} />);
+
+    const createButtonElement = screen.getByTestId(createButton);
+    userEvent.click(createButtonElement);
+
+    expect(matchSetter).not.toHaveBeenCalled()
 });

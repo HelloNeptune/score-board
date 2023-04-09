@@ -41,7 +41,7 @@ test('should sort and render the given matches by their scores', () => {
   expect(scores[1]).toHaveTextContent('Chelsea');
 });
 
-test('should show error message if there is any onging matches', async () => {
+test('should show error message if there is any onging matches', () => {
   render(<ScoreBoard matches={[
     {
       id: 'f5cbf1ccb6f15',
