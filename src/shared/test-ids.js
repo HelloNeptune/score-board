@@ -24,3 +24,5 @@ export const finishButton = 'finish-button';
  * Score Board Compponent
  */
 export const showSummaryButton = 'show-summary-button';
+export const errorMessage = 'error-mesage';
+export const score = 'score';

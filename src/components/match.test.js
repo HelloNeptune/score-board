@@ -3,7 +3,7 @@ import {
   matchComponent,
   updateButton,
   finishButton
-} from './shared';
+} from '../shared';
 import { Match } from './match';
 
 test('should render toolbar component correctly', () => {

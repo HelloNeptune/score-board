@@ -4,7 +4,7 @@ import {
     homeTeamInput,
     awayTeamInput,
     createButton
-} from './shared';
+} from '../shared';
 
 import Toolbar from './toolbar';
 
