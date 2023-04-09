@@ -1,8 +1,21 @@
 import { render, screen } from '@testing-library/react';
+import {
+  appRoot,
+  teamsComponent,
+  toolbarComponent,
+  scoreBoardComponent
+} from './shared';
 import App from './App';
 
-test('renders learn react link', () => {
+test('should render app correctly', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(screen.getByTestId(appRoot)).toBeInTheDocument();
+});
+
+test('should render Toolbar, Teams and ScoreBoard components correctly on initial state', () => {
+  render(<App />);
+
+  expect(screen.getByTestId(teamsComponent)).toBeInTheDocument();
+  expect(screen.getByTestId(toolbarComponent)).toBeInTheDocument();
+  expect(screen.getByTestId(scoreBoardComponent)).toBeInTheDocument();
 });
