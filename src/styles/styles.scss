@@ -1,4 +1,14 @@
+@import "primeflex/primeflex.css";
+
 @import "primereact/resources/themes/lara-light-indigo/theme.css";     
 @import "primereact/resources/primereact.min.css";
 @import "primeicons/primeicons.css";
+
 @import './score-board.scss';
+
+
+.App {
+    min-width: 1200px;
+    max-width: 1200px;
+    margin: 100px auto;
+}

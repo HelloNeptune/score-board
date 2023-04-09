@@ -5,6 +5,7 @@ import { Match } from './components/match';
 function App() {
   return (
     <div className="App">
+      <h2 className='text-center'>Score Board App</h2>
       <Toolbar />
       <Match />
       <ScoreBoard />
