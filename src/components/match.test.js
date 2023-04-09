@@ -2,7 +2,8 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import {
   matchComponent,
-  updateButton,
+  updateHomeTeamButton,
+  updateAwayTeamButton,
   finishButton,
   match
 } from '../shared';
@@ -22,14 +23,17 @@ test('should update the score when update button clicked', () => {
   }} />);
 
   const matchElement = screen.getByTestId(match);
-  expect(matchElement)
-    .toHaveTextContent('Arsenal - 1 - Chelsea - 0');
+  expect(matchElement).toHaveTextContent('Arsenal: 1');
+  expect(matchElement).toHaveTextContent('Chelsea: 0');
   
-  const updateButtonElement = screen.getByTestId(updateButton);
-  userEvent.click(updateButtonElement);
+  const updateHomeTeamButtonElement = screen.getByTestId(updateHomeTeamButton)
+      , updateAwayTeamButtonElement = screen.getByTestId(updateAwayTeamButton);
 
-  expect(matchElement).not
-    .toHaveTextContent('Arsenal - 1 - Chelsea - 0');
+  userEvent.click(updateHomeTeamButtonElement);
+  userEvent.click(updateAwayTeamButtonElement);
+
+  expect(matchElement).toHaveTextContent('Arsenal: 2');
+  expect(matchElement).toHaveTextContent('Chelsea: 1');
 });
 
 test('should finish match when finish button clicked', () => {

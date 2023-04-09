@@ -3,8 +3,8 @@ import { Message } from 'primereact/message';
 
 export const ScoreBoard = () => {
   return (
-    <>
-      <div className="surface-card p-4 shadow-2 border-round w-full lg:w-6 mx-auto mt-8">
+    <div className='w-full lg:w-6 mx-auto mt-8'>
+      <div className="surface-card p-4 shadow-2 border-round ">
         <Button
           label="Show Summary"
           icon="pi pi-list"
@@ -25,6 +25,6 @@ export const ScoreBoard = () => {
         <div className='mb-3 shadow-1 border-round p-2'>Liverpool: 1 - Inter Milan: 1</div>
         <div className='mb-3 shadow-1 border-round p-2'>Juventus: 5 - PSG: 8</div>
       </div>
-    </>
+    </div>
   )
 }

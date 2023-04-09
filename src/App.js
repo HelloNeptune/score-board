@@ -7,7 +7,13 @@ function App() {
     <div className="App">
       <h2 className='text-center'>Score Board App</h2>
       <Toolbar />
-      <Match />
+      <div className='w-full lg:w-6 mx-auto mt-8 flex flex-wrap'>
+        <Match />
+        <Match />
+        <Match />
+        <Match />
+        <Match />
+      </div>
       <ScoreBoard />
     </div>
   );
