@@ -19,6 +19,7 @@ export const createButton = 'create-button';
  */
 export const updateButton = 'update-button';
 export const finishButton = 'finish-button';
+export const match = 'match';
 
 /**
  * Score Board Compponent
