@@ -64,3 +64,12 @@ test('should show error message if there is any onging matches', () => {
 
   expect(screen.getByTestId(errorMessage)).toBeInTheDocument();
 });
+
+test('should show error message if there is no matches', () => {
+  render(<ScoreBoard matches={[]} />);
+
+  const showSummaryButtonElement = screen.getByTestId(showSummaryButton);
+  userEvent.click(showSummaryButtonElement);
+
+  expect(screen.getByTestId(errorMessage)).toBeInTheDocument();
+});
