@@ -1,3 +1,3 @@
-export const Toolbar = () => {
+export const Toolbar = ({ setMatch }) => {
     return (null)
 }

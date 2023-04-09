@@ -7,7 +7,7 @@ import {
   errorMessage,
   score
 } from '../shared';
-import ScoreBoard from './score-board';
+import { ScoreBoard } from './score-board';
 
 test('should render ScoreBoard component correctly', () => {
   render(<ScoreBoard />);

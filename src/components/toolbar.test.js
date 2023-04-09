@@ -7,7 +7,7 @@ import {
     createButton
 } from '../shared';
 
-import Toolbar from './toolbar';
+import { Toolbar } from './toolbar';
 
 test('should render toolbar component correctly', () => {
     render(<Toolbar />);
