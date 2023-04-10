@@ -4,6 +4,13 @@ import { Match } from './components/match';
 import { useState } from 'react';
 import { appRoot } from './shared';
 
+
+/**
+ * Use this mockData in 'matches state' to see example
+ * summary which is described in the coding exercise pdf
+ * ==============
+ */
+
 // const mockData = [
 //   {
 //     home: 'Mexico',
