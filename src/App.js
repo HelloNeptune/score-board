@@ -3,8 +3,41 @@ import { ScoreBoard } from './components/score-board';
 import { Match } from './components/match';
 import { useEffect, useState } from 'react';
 
+const mockData = [
+  {
+    home: 'Mexico',
+    away: 'Canada',
+    score: [0, 5],
+    finished: false
+  },
+  {
+    home: 'Spain',
+    away: 'Brazil',
+    score: [10, 2],
+    finished: false
+  },
+  {
+    home: 'Germany',
+    away: 'France',
+    score: [2, 2],
+    finished: false
+  },
+  {
+    home: 'Uruguay',
+    away: 'Italy',
+    score: [6, 6],
+    finished: false
+  },
+  {
+    home: 'Argentina',
+    away: 'Australia',
+    score: [3, 1],
+    finished: false
+  }
+]
+
 export const App = () => {
-  const [matches, setMatches] = useState([]);
+  const [matches, setMatches] = useState(mockData);
   const [allFinish, setAllFinish] = useState(false);
 
   return (
