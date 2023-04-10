@@ -1,8 +1,31 @@
+import { useState, useCallback } from "react";
 import { toolbarComponent } from "../shared"
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 
 export const Toolbar = ({ setMatch }) => {
+  const [homeTeam, setHomeTeam] = useState('');
+  const [awayTeam, setAwayTeam] = useState('');
+
+  const addCompetition = useCallback(() => {
+    if (!homeTeam || !awayTeam) return;
+
+    setMatch(prevState => {
+      return [
+        ...prevState,
+        {
+          home: homeTeam,
+          away: awayTeam,
+          score: [0, 0],
+          finished: false
+        }
+      ]
+    })
+
+    setHomeTeam('');
+    setAwayTeam('');
+  }, [homeTeam, awayTeam]);
+
   return (
     <>
       <div
@@ -22,6 +45,8 @@ export const Toolbar = ({ setMatch }) => {
                 <InputText
                   id="home-team"
                   type="text"
+                  value={homeTeam}
+                  onChange={(e) => setHomeTeam(e.target.value)}
                   placeholder="Type home team name"
                   className="w-full mb-3"
                 />
@@ -36,12 +61,19 @@ export const Toolbar = ({ setMatch }) => {
                 <InputText
                   id="away-team"
                   type="text"
+                  value={awayTeam}
+                  onChange={(e) => setAwayTeam(e.target.value)}
                   placeholder="Type away team name"
                   className="w-full mb-3"
                 />
               </div>
             </div>
-            <Button label="Start Competition" icon="pi pi-plus" className="w-full" />
+            <Button
+              className="w-full"
+              label="Start Competition"
+              icon="pi pi-plus"
+              onClick={addCompetition}
+            />
           </div>
         </div>
       </div>

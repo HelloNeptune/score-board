@@ -1,6 +1,6 @@
 import { Button } from 'primereact/button';
 
-export const Match = () => {
+export const Match = ({ match }) => {
   return (
     <div className='col-4 mb-3 shadow-1 border-round p-5 gap-2 flex flex-column'>
       <div className='flex align-items-center'>
@@ -11,7 +11,7 @@ export const Match = () => {
           icon="pi pi-plus"
           severity="secondary"
         />
-        Arsenal: 1
+        {match.home}: {match.score[0]}
       </div>
       <div className='flex align-items-center'>
         <Button
@@ -21,7 +21,7 @@ export const Match = () => {
           icon="pi pi-plus"
           severity="secondary"
         />
-        Chelsea: 0
+        {match.away}: {match.score[1]}
       </div>
       <Button
         className='mt-3'
