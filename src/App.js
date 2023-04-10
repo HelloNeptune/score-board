@@ -4,43 +4,43 @@ import { Match } from './components/match';
 import { useState } from 'react';
 import { appRoot } from './shared';
 
-const mockData = [
-  {
-    home: 'Mexico',
-    away: 'Canada',
-    score: [0, 5],
-    updatedAt: 1681126293806,
-    finished: false
-  },
-  {
-    home: 'Spain',
-    away: 'Brazil',
-    score: [10, 2],
-    updatedAt: 1681126298160,
-    finished: false
-  },
-  {
-    home: 'Germany',
-    away: 'France',
-    score: [2, 2],
-    updatedAt: 1681126302623,
-    finished: false
-  },
-  {
-    home: 'Uruguay',
-    away: 'Italy',
-    score: [6, 6],
-    updatedAt: 1681126307203,
-    finished: false
-  },
-  {
-    home: 'Argentina',
-    away: 'Australia',
-    score: [3, 1],
-    updatedAt: 1681126318829,
-    finished: false
-  }
-];
+// const mockData = [
+//   {
+//     home: 'Mexico',
+//     away: 'Canada',
+//     score: [0, 5],
+//     updatedAt: 1681126293806,
+//     finished: false
+//   },
+//   {
+//     home: 'Spain',
+//     away: 'Brazil',
+//     score: [10, 2],
+//     updatedAt: 1681126298160,
+//     finished: false
+//   },
+//   {
+//     home: 'Germany',
+//     away: 'France',
+//     score: [2, 2],
+//     updatedAt: 1681126302623,
+//     finished: false
+//   },
+//   {
+//     home: 'Uruguay',
+//     away: 'Italy',
+//     score: [6, 6],
+//     updatedAt: 1681126307203,
+//     finished: false
+//   },
+//   {
+//     home: 'Argentina',
+//     away: 'Australia',
+//     score: [3, 1],
+//     updatedAt: 1681126318829,
+//     finished: false
+//   }
+// ];
 
 export const App = () => {
   const [matches, setMatches] = useState([]);
