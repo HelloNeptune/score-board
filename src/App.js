@@ -5,17 +5,17 @@ import { useEffect, useState } from 'react';
 
 export const App = () => {
   const [matches, setMatches] = useState([]);
-
-  useEffect(() => {
-    console.log(matches)
-  }, [matches])
+  const [allFinish, setAllFinish] = useState(false);
 
   return (
     <div className="App">
       <h2 className='text-center'>Score Board App</h2>
 
       {/* Toolbar Component */}
-      <Toolbar setMatch={setMatches} />
+      <Toolbar
+        setMatch={setMatches}
+        allFinish={allFinish}
+      />
 
       {/* Active Matches */}
       <div className='w-full lg:w-6 mx-auto mt-8 flex flex-wrap'>
@@ -29,7 +29,10 @@ export const App = () => {
       </div>
 
       {/* Scoreboard Component */}
-      <ScoreBoard />
+      <ScoreBoard
+        matches={matches}
+        setAllFinish={setAllFinish}
+      />
     </div>
   );
 }

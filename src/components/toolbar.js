@@ -3,7 +3,7 @@ import { toolbarComponent } from "../shared"
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
 
-export const Toolbar = ({ setMatch }) => {
+export const Toolbar = ({ setMatch, allFinish }) => {
   const [homeTeam, setHomeTeam] = useState('');
   const [awayTeam, setAwayTeam] = useState('');
 
@@ -24,7 +24,7 @@ export const Toolbar = ({ setMatch }) => {
 
     setHomeTeam('');
     setAwayTeam('');
-  }, [homeTeam, awayTeam]);
+  }, [homeTeam, awayTeam, setMatch]);
 
   return (
     <>
@@ -49,6 +49,7 @@ export const Toolbar = ({ setMatch }) => {
                   onChange={(e) => setHomeTeam(e.target.value)}
                   placeholder="Type home team name"
                   className="w-full mb-3"
+                  disabled={allFinish}
                 />
               </div>
               <div className="col">
@@ -65,6 +66,7 @@ export const Toolbar = ({ setMatch }) => {
                   onChange={(e) => setAwayTeam(e.target.value)}
                   placeholder="Type away team name"
                   className="w-full mb-3"
+                  disabled={allFinish}
                 />
               </div>
             </div>
@@ -73,6 +75,7 @@ export const Toolbar = ({ setMatch }) => {
               label="Start Competition"
               icon="pi pi-plus"
               onClick={addCompetition}
+              disabled={allFinish}
             />
           </div>
         </div>
