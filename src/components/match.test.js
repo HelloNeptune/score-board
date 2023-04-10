@@ -14,7 +14,7 @@ test('should render toolbar component correctly', () => {
     home: 'Arsenal',
     away: 'Chelsea',
     score: [0, 0],
-    createdAt: TEST_DATE,
+    updatedAt: TEST_DATE,
     finished: false
   }} />);
   expect(screen.getByTestId(matchItem)).toBeInTheDocument();
@@ -27,7 +27,7 @@ test('should update the score when update button clicked', () => {
     home: 'Arsenal',
     away: 'Chelsea',
     score: [1, 0],
-    createdAt: TEST_DATE,
+    updatedAt: TEST_DATE,
     finished: false
   };
 
@@ -35,7 +35,7 @@ test('should update the score when update button clicked', () => {
     home: 'Arsenal',
     away: 'Chelsea',
     score: [2, 0],
-    createdAt: TEST_DATE,
+    updatedAt: TEST_DATE,
     finished: false
   };
 
@@ -43,7 +43,7 @@ test('should update the score when update button clicked', () => {
     home: 'Arsenal',
     away: 'Chelsea',
     score: [2, 1],
-    createdAt: TEST_DATE,
+    updatedAt: TEST_DATE,
     finished: false
   };
 
@@ -74,7 +74,7 @@ test('should finish match when finish button clicked', () => {
     home: 'Arsenal',
     away: 'Chelsea',
     score: [1, 0],
-    createdAt: TEST_DATE,
+    updatedAt: TEST_DATE,
     finished: false
   }];
 

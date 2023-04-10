@@ -22,21 +22,21 @@ test('should sort and render the given matches by their scores', () => {
         home: 'Arsenal',
         away: 'Chelsea',
         score: [1, 0],
-        createdAt: 1681126293806,
+        updatedAt: 1681126293806,
         finished: true
       },
       {
         home: 'AC Milan',
         away: 'Real Madrid',
         score: [3, 3],
-        createdAt: 1681126298160,
+        updatedAt: 1681126298160,
         finished: true
       },
       {
         home: 'Barcelona',
         away: 'PSG',
         score: [6, 0],
-        createdAt: 1681126302623,
+        updatedAt: 1681126302623,
         finished: true
       }
     ]}
@@ -57,14 +57,14 @@ test('should show error message if there is any onging matches', () => {
       home: 'Arsenal',
       away: 'Chelsea',
       score: [1, 0],
-      createdAt: 1681126307203,
+      updatedAt: 1681126307203,
       finished: true
     },
     {
       home: 'AC Milan',
       away: 'Real Madrid',
       score: [3, 2],
-      createdAt: 1681126298160,
+      updatedAt: 1681126298160,
       finished: false
     }
   ]} />);

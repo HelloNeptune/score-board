@@ -26,14 +26,14 @@ export const ScoreBoard = ({ matches, setAllFinish }) => {
     // Javascript 'sort' method mutates the given array so because of that
     // we need to clone the original and sort out the cloned one
     const orderedMatches = [...matches].sort((
-      { score: aScore, createdAt: aStartTime }, { score: bScore, createdAt: bStartTime }) => {
+      { score: aScore, updatedAt: aUpdateTime }, { score: bScore, updatedAt: bUpdateTime }) => {
         const aSum = Math.abs(aScore[0] + aScore[1])
             , bSum = Math.abs(bScore[0] + bScore[1]);
 
         const diff = bSum - aSum;
 
         // For the same scores we'll check the start time 
-        return diff === 0 ? aStartTime > bStartTime ? -1 : 1 : diff;
+        return diff === 0 ? aUpdateTime > bUpdateTime ? -1 : 1 : diff;
       }
     );
     

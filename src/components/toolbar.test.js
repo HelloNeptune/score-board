@@ -46,7 +46,7 @@ test('should create new match when click the create button', () => {
         home: 'Arsenal',
         away: 'Chelsea',
         score: [0, 0],
-        createdAt: TEST_DATE,
+        updatedAt: TEST_DATE,
         finished: false
     }]);
 });

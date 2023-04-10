@@ -23,6 +23,7 @@ export const Match = ({ match, setMatch }) => {
       const { index, copy } = clone(prevState, match);
 
       copy[index].score[side] += 1;
+      copy[index].updatedAt = new Date().getTime();
       return copy;
     })
   }, [setMatch, match]);
