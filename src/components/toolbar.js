@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
-import { toolbarComponent } from "../shared"
 import { Button } from 'primereact/button';
 import { InputText } from 'primereact/inputtext';
+import { awayTeamInput, createButton, homeTeamInput, toolbarComponent } from "../shared"
 
 export const Toolbar = ({ setMatch, allFinish }) => {
   const [homeTeam, setHomeTeam] = useState('');
@@ -51,6 +51,7 @@ export const Toolbar = ({ setMatch, allFinish }) => {
                   placeholder="Type home team name"
                   className="w-full mb-3"
                   disabled={allFinish}
+                  data-testid={homeTeamInput}
                 />
               </div>
               <div className="col">
@@ -68,6 +69,7 @@ export const Toolbar = ({ setMatch, allFinish }) => {
                   placeholder="Type away team name"
                   className="w-full mb-3"
                   disabled={allFinish}
+                  data-testid={awayTeamInput}
                 />
               </div>
             </div>
@@ -77,6 +79,7 @@ export const Toolbar = ({ setMatch, allFinish }) => {
               icon="pi pi-plus"
               onClick={addCompetition}
               disabled={allFinish}
+              data-testid={createButton}
             />
           </div>
         </div>
