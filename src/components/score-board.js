@@ -1,7 +1,7 @@
 import { Button } from 'primereact/button';
 import { Message } from 'primereact/message';
 import { useCallback, useState } from 'react';
-import { errorMessage, score, showSummaryButton } from '../shared';
+import { errorMessage, score, scoreBoardComponent, showSummaryButton } from '../shared';
 
 export const ScoreBoard = ({ matches, setAllFinish }) => {
   const [error, setError] = useState(null);
@@ -44,7 +44,10 @@ export const ScoreBoard = ({ matches, setAllFinish }) => {
   }, [matches, setAllFinish])
 
   return (
-    <div className='w-full lg:w-6 mx-auto mt-4'>
+    <div
+      className='w-full lg:w-6 mx-auto mt-4'
+      data-testid={scoreBoardComponent}
+    >
       <div className="surface-card p-4 shadow-2 border-round ">
         <Button
           label="Show Summary"
