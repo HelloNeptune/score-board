@@ -3,7 +3,8 @@ import { useCallback } from 'react';
 import {
   updateAwayTeamButton,
   updateHomeTeamButton,
-  matchItem
+  matchItem,
+  finishButton
 } from '../shared';
 
 const clone = (items, item) => {
@@ -74,6 +75,7 @@ export const Match = ({ match, setMatch }) => {
           size='small'
           outlined
           onClick={finishMatch}
+          data-testid={finishButton}
         >
           Finish Competition
         </Button>

@@ -4,7 +4,6 @@ export const appRoot = 'application-root';
  * Main Components
  */
 export const toolbarComponent = 'toolbar-component';
-export const matchComponent = 'match-component';
 export const scoreBoardComponent = 'score-board-component';
 
 /**
