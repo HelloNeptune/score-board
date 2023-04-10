@@ -9,6 +9,10 @@ import {
 } from '../shared';
 import { Match } from './match';
 
+beforeEach(() => {
+  jest.useRealTimers();
+})
+
 test('should render toolbar component correctly', () => {
   render(<Match match={{
     home: 'Arsenal',
@@ -22,6 +26,9 @@ test('should render toolbar component correctly', () => {
 
 test('should update the score when update button clicked', () => {
   const matchSetter = jest.fn();
+
+  jest.useFakeTimers();
+  jest.setSystemTime(new Date(TEST_DATE));
 
   const initialMatch = {
     home: 'Arsenal',
@@ -58,8 +65,8 @@ test('should update the score when update button clicked', () => {
 
   userEvent.click(updateHomeTeamButtonElement);
 
-  let [updater] = matchSetter.mock.lastCall;
-  let updated = updater([initialMatch]);
+  let [updater] = matchSetter.mock.lastCall
+    , updated = updater([initialMatch]);
   expect(updated).toEqual([updatedMatch]);
 
   userEvent.click(updateAwayTeamButtonElement);
