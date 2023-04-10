@@ -2,6 +2,7 @@ import { Toolbar } from './components/toolbar';
 import { ScoreBoard } from './components/score-board';
 import { Match } from './components/match';
 import { useState } from 'react';
+import { appRoot } from './shared';
 
 const mockData = [
   {
@@ -46,7 +47,10 @@ export const App = () => {
   const [allFinish, setAllFinish] = useState(false);
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      data-testid={appRoot}
+    >
       <h2 className='text-center'>Score Board App</h2>
 
       {/* Toolbar Component */}
