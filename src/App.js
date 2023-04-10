@@ -1,7 +1,7 @@
 import { Toolbar } from './components/toolbar';
 import { ScoreBoard } from './components/score-board';
 import { Match } from './components/match';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const mockData = [
   {
@@ -37,7 +37,7 @@ const mockData = [
 ]
 
 export const App = () => {
-  const [matches, setMatches] = useState(mockData);
+  const [matches, setMatches] = useState([]);
   const [allFinish, setAllFinish] = useState(false);
 
   return (
@@ -51,10 +51,10 @@ export const App = () => {
       />
 
       {/* Active Matches */}
-      <div className='w-full lg:w-6 mx-auto mt-8 flex flex-wrap'>
-        {matches.map((match, idx) => (
+      <div className='w-full lg:w-6 mx-auto mt-4 flex flex-wrap'>
+        {matches.map((match, index) => (
           <Match
-            key={idx}
+            key={index}
             match={match}
             setMatch={setMatches}
           />
