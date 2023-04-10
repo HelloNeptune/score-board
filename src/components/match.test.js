@@ -5,7 +5,7 @@ import {
   updateHomeTeamButton,
   updateAwayTeamButton,
   finishButton,
-  match
+  matchItem
 } from '../shared';
 import { Match } from './match';
 
@@ -15,29 +15,56 @@ test('should render toolbar component correctly', () => {
 });
 
 test('should update the score when update button clicked', () => {
-  render(<Match match={{
+  const mockSetter = jest.fn();
+
+  const initialMatch = {
     home: 'Arsenal',
     away: 'Chelsea',
     score: [1, 0],
     finished: false
-  }} />);
+  };
 
-  const matchElement = screen.getByTestId(match);
+  const updatedMatch = {
+    home: 'Arsenal',
+    away: 'Chelsea',
+    score: [2, 0],
+    finished: false
+  };
+
+  const updatedMatch2 = {
+    home: 'Arsenal',
+    away: 'Chelsea',
+    score: [2, 1],
+    finished: false
+  };
+
+  render(
+    <Match
+      match={initialMatch}
+      setMatch={mockSetter}
+    />
+  );
+
+  const matchElement = screen.getByTestId(matchItem);
   expect(matchElement).toHaveTextContent('Arsenal: 1');
   expect(matchElement).toHaveTextContent('Chelsea: 0');
-  
+
   const updateHomeTeamButtonElement = screen.getByTestId(updateHomeTeamButton)
       , updateAwayTeamButtonElement = screen.getByTestId(updateAwayTeamButton);
 
   userEvent.click(updateHomeTeamButtonElement);
-  userEvent.click(updateAwayTeamButtonElement);
+  let [updater] = mockSetter.mock.lastCall;
+  let updated = updater([initialMatch]);
+  expect(updated).toEqual([updatedMatch]);
 
-  expect(matchElement).toHaveTextContent('Arsenal: 2');
-  expect(matchElement).toHaveTextContent('Chelsea: 1');
+  userEvent.click(updateAwayTeamButtonElement);
+  [updater] = mockSetter.mock.lastCall;
+  updated = updater([initialMatch]);
+  expect(updated).toEqual([updatedMatch2]);
 });
 
 test('should finish match when finish button clicked', () => {
-   render(<Match match={{
+  render(<Match match={{
     home: 'Arsenal',
     away: 'Chelsea',
     score: [1, 0],

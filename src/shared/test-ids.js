@@ -17,9 +17,10 @@ export const createButton = 'create-button';
 /**
  * Match Component
  */
-export const updateButton = 'update-button';
+export const updateHomeTeamButton = 'update-home-team-button';
+export const updateAwayTeamButton = 'update-away-team-button'
 export const finishButton = 'finish-button';
-export const match = 'match';
+export const matchItem = 'match-item';
 
 /**
  * Score Board Compponent
