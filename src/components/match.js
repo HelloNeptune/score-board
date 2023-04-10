@@ -6,17 +6,31 @@ import {
   matchItem
 } from '../shared';
 
+const clone = (items, item) => {
+  const index = items.indexOf(item);
+
+  // Deep copy needed here to trigger state
+  // change
+  const copy = [...items];
+  return { index, copy };
+};
+
 export const Match = ({ match, setMatch }) => {
 
   const updateScore = useCallback((side) => {
     setMatch(prevState => {
-      const index = prevState.indexOf(match);
-
-      // Deep copy needed here to trigger state
-      // change
-      const copy = [...prevState];
+      const { index, copy } = clone(prevState, match);
 
       copy[index].score[side] += 1;
+      return copy;
+    })
+  }, [setMatch, match]);
+
+  const finishMatch = useCallback((side) => {
+    setMatch(prevState => {
+      const { index, copy } = clone(prevState, match);
+
+      copy[index].finished = true;
       return copy;
     })
   }, [setMatch, match]);
@@ -27,36 +41,43 @@ export const Match = ({ match, setMatch }) => {
       data-testid={matchItem}
     >
       <div className='flex align-items-center'>
-        <Button
-          className='increase-button'
-          rounded
-          size='small'
-          icon="pi pi-plus"
-          severity="secondary"
-          onClick={() => updateScore(0)}
-          data-testid={updateHomeTeamButton}
-        />
+        {!match.finished && (
+          <Button
+            className='increase-button'
+            rounded
+            size='small'
+            icon="pi pi-plus"
+            severity="secondary"
+            onClick={() => updateScore(0)}
+            data-testid={updateHomeTeamButton}
+          />
+        )}
         {match.home}: {match.score[0]}
       </div>
       <div className='flex align-items-center'>
-        <Button
-          className='increase-button'
-          rounded
-          size='small'
-          icon="pi pi-plus"
-          severity="secondary"
-          onClick={() => updateScore(1)}
-          data-testid={updateAwayTeamButton}
-        />
+        {!match.finished && (
+          <Button
+            className='increase-button'
+            rounded
+            size='small'
+            icon="pi pi-plus"
+            severity="secondary"
+            onClick={() => updateScore(1)}
+            data-testid={updateAwayTeamButton}
+          />
+        )}
         {match.away}: {match.score[1]}
       </div>
-      <Button
-        className='mt-3'
-        size='small'
-        outlined
-      >
-        Finish Competition
-      </Button>
+      {!match.finished && (
+        <Button
+          className='mt-3'
+          size='small'
+          outlined
+          onClick={finishMatch}
+        >
+          Finish Competition
+        </Button>
+      )}
     </div>
   )
 }
