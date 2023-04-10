@@ -8,33 +8,38 @@ const mockData = [
     home: 'Mexico',
     away: 'Canada',
     score: [0, 5],
+    createdAt: 1681126293806,
     finished: false
   },
   {
     home: 'Spain',
     away: 'Brazil',
     score: [10, 2],
+    createdAt: 1681126298160,
     finished: false
   },
   {
     home: 'Germany',
     away: 'France',
     score: [2, 2],
+    createdAt: 1681126302623,
     finished: false
   },
   {
     home: 'Uruguay',
     away: 'Italy',
     score: [6, 6],
+    createdAt: 1681126307203,
     finished: false
   },
   {
     home: 'Argentina',
     away: 'Australia',
     score: [3, 1],
+    createdAt: 1681126318829,
     finished: false
   }
-]
+];
 
 export const App = () => {
   const [matches, setMatches] = useState([]);

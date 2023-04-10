@@ -17,7 +17,8 @@ export const Toolbar = ({ setMatch, allFinish }) => {
           home: homeTeam,
           away: awayTeam,
           score: [0, 0],
-          finished: false
+          finished: false,
+          createdAt: new Date().getTime()
         }
       ]
     })
