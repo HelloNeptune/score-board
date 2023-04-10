@@ -5,7 +5,7 @@
 Before start the application you should install dependencies with
 `yarn` or `npm install`.
 
-Then you can run the react application with `yarn start` or `npm install`
+Then you can run the react application with `yarn start` or `npm start`
 
 ### Rununing the Tests
 Use following commands
