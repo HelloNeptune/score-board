@@ -20,6 +20,7 @@ test('should update the score when update button clicked', () => {
     home: 'Arsenal',
     away: 'Chelsea',
     score: [1, 0],
+    createdAt: 1681126298160,
     finished: false
   };
 
@@ -27,6 +28,7 @@ test('should update the score when update button clicked', () => {
     home: 'Arsenal',
     away: 'Chelsea',
     score: [2, 0],
+    createdAt: 1681126298160,
     finished: false
   };
 
@@ -34,6 +36,7 @@ test('should update the score when update button clicked', () => {
     home: 'Arsenal',
     away: 'Chelsea',
     score: [2, 1],
+    createdAt: 1681126298160,
     finished: false
   };
 
@@ -62,6 +65,7 @@ test('should finish match when finish button clicked', () => {
     home: 'Arsenal',
     away: 'Chelsea',
     score: [1, 0],
+    createdAt: 1681126298160,
     finished: false
   }} />);
 
