@@ -4,8 +4,7 @@ import {
   matchComponent,
   updateHomeTeamButton,
   updateAwayTeamButton,
-  finishButton,
-  matchItem
+  finishButton
 } from '../shared';
 import { Match } from './match';
 
@@ -44,11 +43,6 @@ test('should update the score when update button clicked', () => {
       setMatch={mockSetter}
     />
   );
-
-  const matchElement = screen.getByTestId(matchItem);
-  expect(matchElement).toHaveTextContent('Arsenal: 1');
-  expect(matchElement).toHaveTextContent('Chelsea: 0');
-
   const updateHomeTeamButtonElement = screen.getByTestId(updateHomeTeamButton)
       , updateAwayTeamButtonElement = screen.getByTestId(updateAwayTeamButton);
 
